@@ -73,8 +73,8 @@ And below is an example of what a single activity log in 2018-11-13-events.json,
 
 - songs - songs in music database
 
-| songs | | |
-|---|---|---|
+| songs | | | |
+|---|---|---|---|
 song_id | VARCHAR | PRIMARY KEY | SORTKEY
 title | VARCHAR 
 artist_id | VARCHAR
@@ -86,8 +86,8 @@ duration | FLOAT
 
 - artists - artists in music database
 
-| artists | | |
-|---|---|---|
+| artists | | | |
+|---|---|---|---|
 artist_id | VARCHAR | PRIMARY KEY | SORTKEY
 name | VARCHAR
 location | VARCHAR
@@ -100,8 +100,8 @@ longitude | VARCHAR
 
 -  time - timestamps of records in songplays broken down into specific units
 
-| time | | |
-|---|---|--|
+| time | | | | |
+|---|---|--|--|--|
 start_time | TIMESTAMP | PRIMARY KEY | DISTKEY | SORTKEY|
 hour | INTEGER
 day | INTEGER
@@ -144,9 +144,10 @@ user_agent | VARCHAR
 
 ## Usage
 
-Simply run the ETL script.
-
+1. Use create_tables.py to create fact and dimension tables for the star schema in Redshift.
+2. Use etl.py to load data from S3 into staging tables on Redshift and then process that data into your analytics tables on Redshift.
 ```
+$ python create_tables.py
 $ python etl.py
 ```
 
