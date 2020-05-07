@@ -66,6 +66,44 @@ And below is an example of what a single activity log in 2018-11-13-events.json,
 ## ETL Processes
 
 ### Songs metadata
+### Staging tables
+
+#### 1. staging_events
+
+| staging_events | | |
+|---|---|---|
+artist |       VARCHAR
+auth  |       VARCHAR
+firstName |    VARCHAR
+gender |        VARCHAR
+itemInSession | INTEGER
+lastName |     VARCHAR
+length |       NUMERIC
+level |         VARCHAR
+location |      VARCHAR
+method |      VARCHAR
+page |         VARCHAR
+registration | FLOAT
+sessionId |     INTEGER | SORTKEY DISTKEY
+song |          VARCHAR
+status |        INTEGER
+ts |           BIGINT
+userAgent |     VARCHAR
+userId |        INTEGER
+
+#### 2. staging_songs
+|staging_songs| | |
+|---|---|---|
+num_songs |        INTEGER 
+artist_id |        VARCHAR SORTKEY DISTKEY
+artist_latitude | VARCHAR
+artist_longitude  |VARCHAR
+artist_location |  VARCHAR
+artist_name |     VARCHAR
+song_id |          VARCHAR
+title  |          VARCHAR
+duration |        NUMERIC
+year |            INTEGER
 
 ### Dimensional Tables
 
