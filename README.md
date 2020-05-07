@@ -95,7 +95,7 @@ userId |        INTEGER
 |staging_songs| | |
 |---|---|---|
 num_songs |        INTEGER 
-artist_id |        VARCHAR SORTKEY DISTKEY
+artist_id |        VARCHAR | SORTKEY DISTKEY
 artist_latitude | VARCHAR
 artist_longitude  |VARCHAR
 artist_location |  VARCHAR
